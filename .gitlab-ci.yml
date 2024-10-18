@@ -1,1 +1,6 @@
+include:
+  - project: 'frontend-school-students/example-example/ci'
+    file: '/angular-project-deploy.yml'
 
+variables:
+  CI_STAND: fw-ib-b7b49
