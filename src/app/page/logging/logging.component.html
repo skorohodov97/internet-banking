@@ -3,7 +3,7 @@
         <div class="form-group">
           <label for="username">Логин</label>
           <input type="text" id="username" formControlName="username" class="form-control">
-          <div *ngIf="authForm.get('username')?.invalid && authForm.get('username')?.touched">
+          <div *ngIf="_username?.invalid && _username?.touched">
             Login is required.
           </div>
         </div>
@@ -12,10 +12,10 @@
         <div class="form-group">
           <label for="password">Пароль</label>
           <input type="password" id="password" formControlName="password" class="form-control">
-          <div *ngIf="authForm.get('password')?.errors?.['required'] && authForm.get('password')?.touched">
+          <div *ngIf="_password?.errors?.['required'] && _password?.touched">
             Password is required.
           </div>
-          <div *ngIf="authForm.get('password')?.errors?.['minLength'] && authForm.get('password')?.touched">
+          <div *ngIf="_password?.errors?.['minLength'] && _password?.touched">
             Password must be at least 6 characters long.
           </div>
         </div>

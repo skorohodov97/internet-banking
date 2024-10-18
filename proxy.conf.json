@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://fw-ib-b7b49.psb-tech.ru",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

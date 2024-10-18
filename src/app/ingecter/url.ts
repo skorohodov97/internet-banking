@@ -1,0 +1,1 @@
+export const URL = ['https://fw-ib-b7b49.psb-tech.ru/api/']

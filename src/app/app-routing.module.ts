@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './page/home-page/home-page.component';
+import { MainPageComponent } from './page/main-page/main-page.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
         (m) => m.LoggingModule
       ),
   },
+  { path: 'main-page', component: MainPageComponent },
 
   { path: '**', redirectTo: '' }
 ];
