@@ -3,7 +3,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ILoggingForm } from '../../interface/loggingform';
 import { ILoggingToken } from '../../interface/loggintoken';
 import { Observable, of, throwError } from 'rxjs';
-import { URL } from 'src/app/ingecter/url';
 import { switchMap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -19,7 +18,7 @@ export class LoggingService {
     return this.http.post<ILoggingToken>(`/api/authorization/token`, data)
     .pipe(
       switchMap((response) => {
-        sessionStorage.setItem('tokens', JSON.stringify(response));
+        localStorage.setItem('tokens', JSON.stringify(response));
         return of('success loggin');
       })
     );

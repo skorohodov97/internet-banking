@@ -1,5 +1,37 @@
 .wrapper {
     display: flex;
+    flex-direction: column; 
     height: 100%;
-    background: url(../assets/fone.jpg);
+    background: url(../assets/fone.jpg) no-repeat center center fixed; 
+    background-size: cover; 
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; 
+}
+
+h2 {
+    flex-shrink: 0; 
+    margin: 20px; 
+    color: #f0f0f0;
+}
+.logo {
+    margin-right: 50px; 
+}
+.logo img {
+    width: 50px; 
+    height: auto;
+    
+}
+
+.content {
+    display: flex;
+    flex-grow: 1; 
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; 
 }

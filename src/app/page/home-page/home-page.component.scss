@@ -1,33 +1,31 @@
 .container {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-background-color: white;
+    width: 100%;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 100%; 
 }
 
 h1 {
-font-size: 3rem;
-margin-bottom: 1rem;
+    color: #314692; /* Синий цвет для заголовка первого уровня */
+    font-size: 2.5em; /* Размер для первого заголовка */
+    margin: 16px 0;
 }
 
 h2 {
-font-size: 1.5rem;
-margin-bottom: 2rem;
+    color: #314692; /* Синий цвет для заголовка второго уровня */
+    font-size: 1.5em; /* Размер для второго заголовка */
+    margin: 16px 0;
 }
 
-.btn {
-padding: 1rem 2rem;
-margin-bottom: 1rem;
-background-color: white;
-color: #2C2D84;
-border: 2px solid blue; /* Добавляем синюю обводку */
-border-radius: 25px; /* Закругление краев */
-cursor: pointer;
-transition: background-color 0.3s;
-}
-
-.btn:hover {
-background-color: orange;
+.action-button {
+    width: 100%; /* Делает кнопки одинаковой ширины */
+    max-width: 200px; /* Максимальная ширина кнопок */
+    margin: 8px 0; /* Расстояние между кнопками */
 }

@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
-import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {  Subscription } from 'rxjs';
 import { LoggingService } from 'src/app/service/login-service/logging.service';
@@ -20,7 +20,7 @@ export class LoggingComponent implements OnInit {
   ngOnInit() {
     this.authForm = this.fb.group({
         'username': [null, Validators.required],
-        'password': [null, [Validators.required, Validators.minLength(6)]]
+        'password': [null, [Validators.required, Validators.minLength(8)]]
     });
 }
 

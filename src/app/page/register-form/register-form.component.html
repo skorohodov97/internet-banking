@@ -1,0 +1,82 @@
+<div class="container">
+    <h2>Регистрация</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Имя</mat-label>
+            <input type="text" id="firstName" formControlName="firstName" matInput />
+            <mat-error *ngIf="_firstName?.invalid && _firstName?.touched">
+                Введите имя
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Фамилия</mat-label>
+            <input type="text" id="lastName" formControlName="lastName" matInput />
+            <mat-error *ngIf="_lastName?.invalid && _lastName?.touched">
+                Введите фамилию
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Отчество</mat-label>
+            <input type="text" id="middleName" formControlName="middleName" matInput />
+            <mat-error *ngIf="_middleName?.invalid && _middleName?.touched">
+                Введите отчество
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Дата рождения</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="_birthdate?.invalid && _birthdate?.touched">
+                Введите дату рождения
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Логин</mat-label>
+            <input type="text" id="login" formControlName="login" matInput />
+            <mat-error *ngIf="_login?.invalid && _login?.touched">
+                Введите логин
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Пароль</mat-label>
+            <input type="password" formControlName="password" matInput />
+            <mat-error *ngIf="_password?.errors?.['required'] && _password?.touched">
+                Введите пароль
+            </mat-error>
+            <mat-error *ngIf="_password?.errors?.['minLength'] && _password?.touched">
+                Пароль должен быть длиной не менее 8 символов.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Номер телефона</mat-label>
+            <input type="text" id="phoneNumber" formControlName="phoneNumber" matInput />
+            <mat-error *ngIf="_phoneNumber?.invalid && _phoneNumber?.touched">
+                Введите номер телефона
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Адрес</mat-label>
+            <input type="text" id="address" formControlName="address" matInput />
+            <mat-error *ngIf="_address?.invalid && _address?.touched">
+                Введите адрес
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="text" id="email" formControlName="email" matInput />
+            <mat-error *ngIf="_email?.invalid && _email?.touched">
+                Введите email
+            </mat-error>
+        </mat-form-field>
+        <mat-label>Пол</mat-label>
+        <mat-radio-group aria-label="Выберите пол" formControlName="sex">
+          <mat-radio-button value="Male">Мужчина</mat-radio-button>
+          <mat-radio-button value="Female">Женщина</mat-radio-button>
+        </mat-radio-group>
+        <span *ngIf="_sex?.invalid && _sex?.touched">Пол обязателен</span>
+  
+       
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Зарегистрироваться</button>
+    </form>
+</div>
