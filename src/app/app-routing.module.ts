@@ -1,23 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './page/home-page/home-page.component';
-import { MainPageComponent } from './page/main-page/main-page.component';
-import { RegisterFormComponent } from './page/register-form/register-form.component';
-import {LoggingComponent} from "./page/logging/logging.component";
+import {LoginRegisterGuard} from './guard/login-register.guard';
+import {AuthGuard} from './guard/auth.guard';
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  {
-    path: 'login',
-    component: LoggingComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterFormComponent, 
-  },
-
-  { path: 'main-page', component: MainPageComponent },
-
-  { path: '**', redirectTo: '' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },  
+  { path: 'home', loadChildren: () => import('./page/home-page/home.module').then(m => m.HomePageModule), canActivate: [LoginRegisterGuard] },
+  { path: 'login', loadChildren: () => import('./page/logging/logging.module').then(m => m.LoggingModule), canActivate: [LoginRegisterGuard] },
+  { path: 'register', loadChildren: () => import('./page/register-form/register.module').then(m => m.RegisterModule), canActivate: [LoginRegisterGuard] },
+  { path: 'main', loadChildren: () => import('./page/main-page/main.module').then(m => m.MainPageModule), canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

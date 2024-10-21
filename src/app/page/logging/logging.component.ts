@@ -30,7 +30,7 @@ export class LoggingComponent implements OnInit {
       const password = this._password?.value;
       this.subscription$ = this.loggingService.authorizate(login, password).subscribe({
         next: (response) => {       
-          this.router.navigate(['/main-page']);
+          this.router.navigate(['/main']);
         },
         error: (err: HttpErrorResponse) => {
           console.log(err); 

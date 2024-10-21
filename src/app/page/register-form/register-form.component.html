@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Регистрация</h2>
+    <h2 class="typography-text">Регистрация</h2>
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
         <mat-form-field appearance="fill">
             <mat-label>Имя</mat-label>
@@ -50,7 +50,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Номер телефона</mat-label>
-            <input type="text" id="phoneNumber" formControlName="phoneNumber" matInput />
+            <input type="text" mask="+0 (000) 000-00-00" placeholder="+X (XXX) XXX-XX-XX" id="phoneNumber" formControlName="phoneNumber" matInput />
             <mat-error *ngIf="_phoneNumber?.invalid && _phoneNumber?.touched">
                 Введите номер телефона
             </mat-error>

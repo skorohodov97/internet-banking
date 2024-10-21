@@ -1,53 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MainPageComponent } from './page/main-page/main-page.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './ingecter/auth.interceptor';
-import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import {HomePageModule} from './page/home-page/home.module';
+import {MainPageModule} from './page/main-page/main.module';
+import {RegisterModule} from './page/register-form/register.module';
+import {LoggingModule} from './page/logging/logging.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterFormComponent } from './page/register-form/register-form.component';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatSelectModule } from '@angular/material/select';
-import {LoggingComponent} from "./page/logging/logging.component";
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    MainPageComponent,
-    RegisterFormComponent,
-    LoggingComponent
+   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ReactiveFormsModule,
     HttpClientModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatNativeDateModule,
+    HomePageModule,
+    MainPageModule,
+    RegisterModule,
+    LoggingModule,
     BrowserAnimationsModule,
-    MatRadioModule,
-    MatDatepickerModule,
-    MatSelectModule
-    
+    RouterModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true 
-    },
-    { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' },
+    }
 
   ],
   bootstrap: [AppComponent]

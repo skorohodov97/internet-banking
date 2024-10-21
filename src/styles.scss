@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-01: #526ED3;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.typography-text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    color: $primary-01; 
+  }
