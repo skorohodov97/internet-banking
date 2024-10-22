@@ -11,9 +11,13 @@ import {RegisterModule} from './page/register-form/register.module';
 import {LoggingModule} from './page/logging/logging.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { ProfileMenuComponent } from './profile-menu/profile-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
+    ProfileMenuComponent,
    
 
   ],
@@ -26,7 +30,9 @@ import { RouterModule } from '@angular/router';
     RegisterModule,
     LoggingModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [
     {

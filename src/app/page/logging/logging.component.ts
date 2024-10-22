@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {  Subscription } from 'rxjs';
-import { LoggingService } from 'src/app/service/login-service/logging.service';
+import { AuthorizationService } from 'src/app/service/authorization-service/authorization.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-logging',
@@ -14,7 +14,7 @@ export class LoggingComponent implements OnInit {
 
   authForm!: FormGroup;
   private subscription$: Subscription | null = null;
-  constructor(private readonly loggingService: LoggingService, private readonly router: Router, private readonly fb: FormBuilder) {
+  constructor(private readonly authorizationService: AuthorizationService, private readonly router: Router, private readonly fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class LoggingComponent implements OnInit {
     if (this.authForm.valid) {
       const login = this._username?.value;
       const password = this._password?.value;
-      this.subscription$ = this.loggingService.authorizate(login, password).subscribe({
+      this.subscription$ = this.authorizationService.authorizate(login, password).subscribe({
         next: (response) => {       
           this.router.navigate(['/main']);
         },

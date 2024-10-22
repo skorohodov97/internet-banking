@@ -1,0 +1,15 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  
+
+  <mat-menu #menu="matMenu">
+    <ng-container *ngIf="isAuthenticated; else loginMenu">
+      <button mat-menu-item (click)="logout()">Выход</button>
+      <button mat-menu-item (click)="goToSettings()">Настройки</button>
+    </ng-container>
+    <ng-template #loginMenu>
+      <button mat-menu-item (click)="login()">Вход</button>
+      <button mat-menu-item (click)="register()">Регистрация</button>
+    </ng-template>
+  </mat-menu>

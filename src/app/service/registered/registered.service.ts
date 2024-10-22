@@ -12,7 +12,7 @@ export class RegisteredService {
   registerUser(register: IRegisteredForm): Observable<string> {
     const data = this.conversion(register);
     return this.http.put<IRegisteredForm>('/api/clients', data)
-    .pipe(switchMap(response => of('success registered')));;
+    .pipe(switchMap(response => of('success registered')));
   }
   conversion(data: IRegisteredForm): IRegisteredForm {
     return {

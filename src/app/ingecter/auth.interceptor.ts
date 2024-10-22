@@ -7,13 +7,12 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { LoggingService } from '../service/login-service/logging.service';
 import {ILoggingToken} from '../interface/loggintoken';
 import { Router } from '@angular/router';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private loginService: LoggingService, private readonly router: Router) {}
+  constructor( private readonly router: Router) {}
 
   intercept(
     request: HttpRequest<unknown>,
