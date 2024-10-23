@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {  Subscription } from 'rxjs';
-import { AuthorizationService } from '../service/authorization-service/authorization.service';
+import { AuthorizationService } from '../../technical/service/authorization-service/authorization.service';
 @Component({
   selector: 'app-profile-menu',
   templateUrl: './profile-menu.component.html',
@@ -41,5 +41,10 @@ export class ProfileMenuComponent implements OnInit {
 
   goToSettings() {
     this.router.navigate(['/settings']);
+  }
+  ngOnDestroy() {
+    if (this.subscription$) {
+      this.subscription$.unsubscribe();
+    }
   }
 }

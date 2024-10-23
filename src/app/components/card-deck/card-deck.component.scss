@@ -1,0 +1,54 @@
+.deck {
+    width: 887px;
+    height: 168px;
+    &_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    &_title {
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24.2px;
+      text-align: left;
+      color: #03053d;
+    }
+    &_link {
+      font-family: Inter;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18.15px;
+      text-align: left;
+      color: #03053d;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    &_card {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      gap: 10px;
+      width: 887px;
+      height: 168px;
+      border-radius: 20px;
+      background-color: #f6f7ff;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+  
+     
+    }
+    &_inscription {
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24.2px;
+      text-align: left;
+      color: #03053d;
+    }
+  }
+  
+  

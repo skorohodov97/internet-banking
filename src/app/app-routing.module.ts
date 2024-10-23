@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginRegisterGuard} from './guard/login-register.guard';
-import {AuthGuard} from './guard/auth.guard';
+import {LoginRegisterGuard} from './technical/guard/login-register.guard';
+import {AuthGuard} from './technical/guard/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },  
   { path: 'home', loadChildren: () => import('./page/home-page/home.module').then(m => m.HomePageModule), canActivate: [LoginRegisterGuard] },

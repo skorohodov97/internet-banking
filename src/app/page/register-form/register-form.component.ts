@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {RegisteredService} from '../../service/registered/registered.service';
-import {IRegisteredForm} from '../../interface/registeredform';
+import {RegisteredService} from '../../technical/service/registered/registered.service';
+import {IRegisteredForm} from '../../technical/interface/registeredform';
 import { Subscription } from 'rxjs';
 
 

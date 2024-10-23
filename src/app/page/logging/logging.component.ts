@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {  Subscription } from 'rxjs';
-import { AuthorizationService } from 'src/app/service/authorization-service/authorization.service';
+import { AuthorizationService } from 'src/app/technical/service/authorization-service/authorization.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-logging',

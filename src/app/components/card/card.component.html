@@ -1,0 +1,28 @@
+<mat-card class="card" [ngClass]="cardType">
+    <mat-card-content>
+      <img *ngIf="cardType === 'bank'" class="card__image" [src]="imageSrc" alt="Card image" />
+      
+      <div class="card__info">
+        <ng-container [ngSwitch]="cardType">
+          
+
+          <ng-container *ngSwitchCase="'bank'">
+            <p class="card__number">{{ number | lastSimvol:4 }}</p>
+            <p class="card__date">{{ month }}/{{ year }}</p>
+          </ng-container>
+          
+
+          <ng-container *ngSwitchCase="'account'">
+            <p class="card__name">{{ accountName }}</p>
+            <p class="card__balance">{{ balance | currency:currency }}</p>
+            <p class="card__number">{{ number | lastSimvol:4 }}</p>
+          </ng-container>
+          
+          
+          <ng-container *ngSwitchCase="'example'">
+            <p class="card__example">0000</p>
+          </ng-container>
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
