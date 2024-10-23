@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./page/logging/logging.module').then(m => m.LoggingModule), canActivate: [LoginRegisterGuard] },
   { path: 'register', loadChildren: () => import('./page/register-form/register.module').then(m => m.RegisterModule), canActivate: [LoginRegisterGuard] },
   { path: 'main', loadChildren: () => import('./page/main-page/main.module').then(m => m.MainPageModule), canActivate: [AuthGuard] },
+  { path: 'card-order', loadChildren: () => import('./page/type-card-page/type-card.module').then(m => m.TypeCardPageModule), canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/home' }
 ];
 

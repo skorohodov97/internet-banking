@@ -15,6 +15,8 @@ import { ProfileMenuComponent } from './components/profile-menu/profile-menu.com
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
+import { TypeCardPageModule } from './page/type-card-page/type-card.module';
+
 
 
 
@@ -23,9 +25,6 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     AppComponent,
     ProfileMenuComponent,
-
-  
-
   ],
   imports: [
     BrowserModule,
@@ -39,6 +38,9 @@ import { MatIconModule } from '@angular/material/icon';
     RouterModule,
     MatMenuModule,
     MatIconModule,
+    TypeCardPageModule,
+    
+
 
   ],
   providers: [

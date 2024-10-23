@@ -5,7 +5,7 @@ import { MainPageComponent } from './main-page.component';
 import { CardDeckComponent } from '../../components/card-deck/card-deck.component';
 import { MatCardModule } from '@angular/material/card';
 import {LastSimvolPipe} from '../../technical/pipes/last-simvol.pipe';
-import { CardComponent } from '../../components/card/card.component';
+import {CardComponent} from '../../components/card/card.component';
 @NgModule({
     declarations: [
         MainPageComponent,
@@ -16,7 +16,7 @@ import { CardComponent } from '../../components/card/card.component';
     imports: [
         CommonModule,
         MainPageRoutingModule,
-        MatCardModule
+        MatCardModule,
     ],
     exports: [MainPageComponent]
 })

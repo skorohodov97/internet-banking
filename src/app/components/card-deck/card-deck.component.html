@@ -3,7 +3,7 @@
         <ng-container *ngSwitchCase="'card'">
             <div class="deck_header">
                 <h2 class="deck_title">Мои карты</h2>
-                <a class="deck_link">Заказать карту</a>
+                <a class="deck_link"  (click)="cardOrder()">Заказать карту</a>
             </div>
 
             <mat-card class="deck_card" >
@@ -19,7 +19,7 @@
         <ng-container *ngSwitchCase="'account'">
             <div class="deck_header">
                 <h2 class="deck_title">Мои счета</h2>
-                <a class="deck_link">Заказать счет</a>
+                <a class="deck_link" (click)="accountOpen()">Заказать счет</a>
             </div>
 
           
