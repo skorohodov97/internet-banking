@@ -9,27 +9,29 @@
     color: #fff;
     &.bank {
       background-color: #2c2d84;
+      img {
+        width: 53px;
+        height: 30px;
+
+      }
     }
   
     &.account {
       background-color: #FF7043;
     }
-    &_program {
+    &__info {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
     }
-    &_inform {
-      width: 53px;
-      height: 15px;
-    }
-    &_number {
+    
+    &__number {
       font-size: 20px;
       font-weight: 700;
       line-height: 24.2px;
       text-align: left;
     }
-    &_data {
+    &__data {
       font-size: 12px;
       font-weight: 500;
       line-height: 14.52px;

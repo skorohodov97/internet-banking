@@ -29,7 +29,7 @@
                     <p class="deck_inscription">Нет доступных счетов.</p>
                 </div>
                 <div *ngFor="let account of accounts">
-                    <app-card [cardType]="'account'" [accountName]="account.name" [balance]="account.balance" [number]="account.number"></app-card>
+                    <app-card [cardType]="'account'" [accountName]="account.name" [balance]="account.balance" [currency]="account.currency" [number]="account.number"></app-card>
                 </div>
                 
             </mat-card>

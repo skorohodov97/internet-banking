@@ -14,7 +14,7 @@
 
           <ng-container *ngSwitchCase="'account'">
             <p class="card__name">{{ accountName }}</p>
-            <p class="card__balance">{{ balance | currency:currency }}</p>
+            <p class="card__balance">{{ balance | currency:getCurrency() }}</p>
             <p class="card__number">{{ number | lastSimvol:4 }}</p>
           </ng-container>
           

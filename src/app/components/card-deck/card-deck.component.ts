@@ -13,11 +13,11 @@ export class CardDeckComponent implements OnInit {
   @Input() deckType: 'card' | 'account'  = 'card'; 
   cards: Card[] = [];
   accounts: Account[] = [];
-
+  currency?: string;
   constructor(
     private router: Router,
     private cardDSService: CardDSService,
-    private accountDSService: AccountDSService
+    private accountDSService: AccountDSService,
   ) { }
 
   ngOnInit(): void {
